@@ -1,0 +1,3 @@
+remote_theme: benc-uk/theme-msdark
+plugins:
+- jekyll-remote-theme 
