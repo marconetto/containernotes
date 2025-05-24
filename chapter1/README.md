@@ -88,7 +88,7 @@ Install it:
 ```
 brew install podman
 ```
-Start the VM (required in macos)
+Start the VM (required in macos; for linux you don't need that)
 
 ```
 podman machine init
@@ -99,7 +99,7 @@ Then you can do the same commands as described in the docker section above. For
 instance:
 
 ```
-$ podman run hello-world                                                                         [~/hub/containernotes/chapter1]
+$ podman run hello-world
 Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
 Trying to pull quay.io/podman/hello:latest...
 Getting image source signatures
@@ -155,4 +155,17 @@ Or just check something there:
 
 ```
 docker exec -it <mycontainer> ls /app
+```
+
+## Linux in azure
+
+When you provision a VM linux in Azure docker may fail because it says the
+daemon: "docker: permission denied while trying to connect to the Docker daemon socket"
+
+By default, Docker runs as a root-owned service. To manage Docker as a non-root
+user, your user needs to be part of the docker group. This allows you to run
+Docker commands without needing sudo. Add user to docker group:
+
+```
+sudo usermod -aG docker $USER
 ```
