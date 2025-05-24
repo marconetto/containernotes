@@ -157,10 +157,10 @@ Or just check something there:
 docker exec -it <mycontainer> ls /app
 ```
 
-## Linux in azure
+## Linux
 
-When you provision a VM linux in Azure docker may fail because it says the
-daemon: "docker: permission denied while trying to connect to the Docker daemon socket"
+In Linux, docker may fail because it says the daemon: "docker: permission denied
+while trying to connect to the Docker daemon socket"
 
 By default, Docker runs as a root-owned service. To manage Docker as a non-root
 user, your user needs to be part of the docker group. This allows you to run
