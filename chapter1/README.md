@@ -124,3 +124,35 @@ podman machine stop
 ```
 
 
+## Other notes
+
+
+If you want to get into a container image to explore file system for instance:
+
+```
+docker run -it --rm <myimage> bash
+```
+
+```
+-it: interactive terminal
+--rm: remove container on exit
+<myimage>: use the image your original container used
+```
+
+You can check the content of a file in the image for instance:
+
+```
+docker run -it --rm hello-python cat /app/app.py
+```
+
+If you want to get into a running container:
+
+```
+docker exec -it <mycontainer> bash
+```
+
+Or just check something there:
+
+```
+docker exec -it <mycontainer> ls /app
+```
